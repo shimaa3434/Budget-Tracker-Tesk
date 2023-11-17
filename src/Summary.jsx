@@ -1,8 +1,8 @@
 import React from 'react'
 
 const Summary = ({tranasactions}) => {
-    const income = tranasactions.filter(i => i.category === "income").reduce((acc, item)=> acc + item.amount , 0)
-    const expense = tranasactions.filter(i => i.category === "expense").reduce((acc, item)=> acc + item.amount, 0)
+    const income = tranasactions.filter(i => i.category === "income").reduce((acc, item)=> acc + Number(item.amount) , 0)
+    const expense = tranasactions.filter(i => i.category === "expense").reduce((acc, item)=> acc + Number(item.amount), 0)
     const balance = income - expense
   return (
     <div className='container'>
